@@ -1,11 +1,14 @@
 #!/usr/bin/env node
 var fs = require("fs");
-var rpn = require("rpn");
+var rpn = require("..");
 
+console.log(process.argv);
 process.argv.slice(2).forEach(function (sourceFilename) {
-    
     var codeFilename   = sourceFilename.replace(/\.[\w]+$/, ".js");   
     var mapFilename    = codeFilename + ".map";    
+    console.log('sourceFilename',sourceFilename);
+    console.log('codeFilename',codeFilename);
+    console.log('mapFilename',mapFilename);
     
     var input          = fs.readFileSync(sourceFilename);
     
